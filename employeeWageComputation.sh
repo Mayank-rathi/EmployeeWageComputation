@@ -26,6 +26,11 @@ function getWorkingHours() {
 	esac
 	echo $employeeHours
 }
+function calculateDailyWage() {
+		local workHours=$1
+		wage=$((workHours*EMPLOYEE_RATE_PER_HOUR))
+		echo $wage
+}
 
 while [[ $totalEmployeeHours -lt $MAX_HOURS_IN_MONTH && $totalWorkingDays -lt $WORKING_DAYS_PER_MONTH ]]
 do
@@ -34,4 +39,4 @@ do
 	totalEmployeeHours=$(($totalEmployeeHours + $workHours))
 done
 	totalSalary=$(($totalEmployeeHours*$EMPLOYEE_RATE_PER_HOUR));
-
+	echo "Daily Wage ${employeeDailyWage[@]}"
