@@ -3,13 +3,15 @@ echo " welcome Employee Wage Computation "
 
 #CONSTANT
 IS_PRESENT=1;
+EMPLOYEE_RATE_PER_HOUR=20;
+EMPLOYEE_HOURS=8;
 
 #VARIABLE
 randomCheck=$((RANDOM%2))
 
 if [ $IS_PRESENT -eq $randomCheck ]
 then
-	echo "Employee is Present"
+	salary=$(($EMPLOYEE_HOURS*$EMPLOYEE_RATE_PER_HOUR))
 else
-	echo "Employee is Absent"
+	salary=0;
 fi
